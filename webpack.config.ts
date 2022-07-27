@@ -5,9 +5,8 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 const config: webpack.Configuration = {
   entry: {
-    content: path.join(__dirname, "src/content/index.ts"),
-    popup: path.join(__dirname, "src/popup/index.tsx"),
     background: path.join(__dirname, "src/background/index.ts"),
+    script: path.join(__dirname, "src/background/script.ts"),
   },
   output: {
     filename: "[name].js",

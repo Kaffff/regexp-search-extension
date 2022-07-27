@@ -14,20 +14,10 @@
       "description": "Run regular expression search on the current page."
     }
   },
-  "action": {
-    "default_popup": "popup.html"
-  },
   "background": {
     "service_worker": "js/background.js"
   },
 
-  "permissions": [
-    "activeTab",
-    "background",
-    "declarativeContent",
-    "tabs",
-    "scripting",
-    "webNavigation"
-  ],
+  "permissions": ["activeTab", "background", "scripting"],
   "host_permissions": ["<all_urls>"]
 }
