@@ -1,40 +1,29 @@
-console.log("background");
 const script = () => {
-  console.log("script");
-  const observer = new MutationObserver((mutations) => {
-    mutations.map((m) => {
-      switch (m.type) {
-        case "childList": {
-        }
-        case "attributes": {
-          console.log("attributes", m);
-        }
-        case "characterData": {
-          console.log("characterData", m);
-        }
-      }
-    });
-  });
-  document.body.style.background = "#ff0000";
-  const inputElements = document.getElementsByTagName("input");
-  for (let i = 0; i < inputElements.length; i++) {
-    inputElements.item(i).oninput = (e: InputEvent) => {
-      console.log(e.data);
-    };
-  }
-  // observer.observe(document.body, {
-  //   childList: true,
-  //   characterData: true,
-  //   attributes: true,
-  //   subtree: true,
-  // });
+  const textContent = document.body.textContent;
+  const input_ele = document.createElement("input");
+  input_ele.style.position = "absolute";
+  input_ele.style.top = "0px";
+  input_ele.style.right = "0px";
+  input_ele.style.zIndex = Number.MAX_SAFE_INTEGER.toString();
+  input_ele.onchange = (e: InputEvent) => {
+    if (!input_ele.value || input_ele.value.trim() == "") return;
+    const re = new RegExp(input_ele.value, "gi");
+    const match = [...textContent.matchAll(re)];
+    if (!match || match.length == 0) console.log(`${input_ele.value} 0件`);
+    else console.log(`${input_ele.value} ${match.length}件\n${match}`);
+  };
+  document.body.appendChild(input_ele);
+  input_ele.focus();
 };
 
-chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
-  if (changeInfo.status == "complete") {
-    chrome.scripting.executeScript({
-      target: { tabId, allFrames: false },
-      func: script,
-    });
-  }
+chrome.commands.onCommand.addListener(async (command) => {
+  chrome.tabs.query({ currentWindow: true, active: true }).then((tabs) => {
+    console.log(tabs);
+    for (const tab of tabs) {
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id, allFrames: false },
+        func: script,
+      });
+    }
+  });
 });

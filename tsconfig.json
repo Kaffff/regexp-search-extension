@@ -10,6 +10,7 @@
     "outDir": "dist/js",
     "sourceMap": true,
     "target": "es5",
-    "isolatedModules": true
+    "isolatedModules": false,
+    "downlevelIteration": true
   }
 }

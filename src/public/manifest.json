@@ -6,7 +6,7 @@
   "version": "1.0.0",
 
   "commands": {
-    "regexp-search": {
+    "Ctrl+F": {
       "suggested_key": {
         "default": "Ctrl+F",
         "mac": "Command+F"
@@ -17,7 +17,6 @@
   "action": {
     "default_popup": "popup.html"
   },
-
   "background": {
     "service_worker": "js/background.js"
   },
@@ -30,5 +29,5 @@
     "scripting",
     "webNavigation"
   ],
-  "host_permissions": ["*://*/*"]
+  "host_permissions": ["<all_urls>"]
 }

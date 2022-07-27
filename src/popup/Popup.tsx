@@ -3,7 +3,7 @@ import React from "react";
 const Popup = () => {
   return (
     <div>
-      <button onClick={onClickHandler}>Click</button>
+      <input type="text" />
     </div>
   );
 };

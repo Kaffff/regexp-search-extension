@@ -21,6 +21,8 @@
     "copy-webpack-plugin": "^11.0.0",
     "esbuild": "^0.14.50",
     "esbuild-loader": "^2.19.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "thread-loader": "^3.0.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4",
     "webpack": "^5.74.0",
