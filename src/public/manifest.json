@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+
+  "name": "regexp-search",
+  "description": "regexp-search",
+  "version": "1.0.0",
+
+  "commands": {
+    "regexp-search": {
+      "suggested_key": {
+        "default": "Ctrl+F",
+        "mac": "Command+F"
+      },
+      "description": "Run regular expression search on the current page."
+    }
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "js/background.js"
+  },
+
+  "permissions": [
+    "activeTab",
+    "background",
+    "declarativeContent",
+    "tabs",
+    "scripting",
+    "webNavigation"
+  ],
+  "host_permissions": ["*://*/*"]
+}

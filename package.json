@@ -1,0 +1,29 @@
+{
+  "name": "regexp-search-extension",
+  "version": "0.0.1",
+  "repository": "https://github.com/Kaffff/regexp-search-extension",
+  "author": "Kaffff <takahashi.prog@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --config webpack.config.ts --mode production"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.193",
+    "@types/copy-webpack-plugin": "^10.1.0",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/webpack": "^5.28.0",
+    "chrome": "^0.1.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "esbuild": "^0.14.50",
+    "esbuild-loader": "^2.19.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
