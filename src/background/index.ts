@@ -1,3 +1,4 @@
+//@ts-ignore
 chrome.commands.onCommand.addListener(async (command) => {
   chrome.tabs.query({ currentWindow: true, active: true }).then((tabs) => {
     for (const tab of tabs) {
